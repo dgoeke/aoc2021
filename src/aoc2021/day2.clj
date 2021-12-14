@@ -1,8 +1,8 @@
 (ns aoc2021.day2
-  (:require [clojure.java.io :as io]
+  (:require [aoc2021.core :refer [day]]
             [clojure.string :as str]))
 
-(def input (->> "day2.txt" io/resource slurp str/split-lines
+(def input (->> (day 2)
                 (map #(str/split % #" "))
                 (map (fn [[dir amt]]
                        [(keyword dir) (Integer/parseInt amt)]))))

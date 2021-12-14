@@ -1,9 +1,8 @@
 (ns aoc2021.day1
-  (:require [clojure.java.io :as io]
-            [clojure.string :as str]))
+  (:require [aoc2021.core :refer [day]]))
 
 (def input
-  (->> "day1.txt" io/resource slurp str/split-lines (map #(Integer/parseInt %))))
+  (map #(Integer/parseInt %) (day 1)))
 
 (def part1
   (->> input

@@ -1,8 +1,5 @@
 (ns aoc2021.day3
-  (:require [clojure.java.io :as io]
-            [clojure.string :as str]))
-
-(def input (->> "day3.txt" io/resource slurp str/split-lines))
+  (:require [aoc2021.core :refer [day]]))
 
 (defn ones-complement [s]
   (apply str (map {\0 \1, \1 \0} s)))
@@ -27,8 +24,8 @@
   (* (Integer/parseInt str1 2) (Integer/parseInt str2 2)))
 
 (def part1
-  (mult-binary-strings (most-common-bits input)
-                       (ones-complement (most-common-bits input))))
+  (mult-binary-strings (most-common-bits (day 3))
+                       (ones-complement (most-common-bits (day 3)))))
 
 (defn rating-finder [data filter-fn]
   (loop [bit-number 0
@@ -40,5 +37,5 @@
         (recur (inc bit-number) new-data)))))
 
 (def part2
-  (mult-binary-strings (rating-finder input most-common-bits)
-                       (rating-finder input least-common-bits)))
+  (mult-binary-strings (rating-finder (day 3) most-common-bits)
+                       (rating-finder (day 3) least-common-bits)))

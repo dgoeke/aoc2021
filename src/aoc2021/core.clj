@@ -3,8 +3,10 @@
             [clojure.string :as str])
   (:gen-class))
 
-(defn day [^Integer n]
-  (->> (format "day%d.txt" n)
-       io/resource
-       slurp
-       str/split-lines))
+(def day
+  (memoize
+    (fn [^Integer n]
+      (->> (format "day%d.txt" n)
+           io/resource
+           slurp
+           str/split-lines))))
