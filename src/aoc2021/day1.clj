@@ -1,8 +1,8 @@
 (ns aoc2021.day1
-  (:require [aoc2021.core :refer [day]]))
+  (:require [aoc2021.core :refer [day-lines]]))
 
 (def input
-  (map #(Integer/parseInt %) (day 1)))
+  (map #(Integer/parseInt %) (day-lines 1)))
 
 (def part1
   (->> input

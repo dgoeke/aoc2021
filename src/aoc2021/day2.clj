@@ -1,8 +1,8 @@
 (ns aoc2021.day2
-  (:require [aoc2021.core :refer [day]]
+  (:require [aoc2021.core :refer [day-lines]]
             [clojure.string :as str]))
 
-(def input (->> (day 2)
+(def input (->> (day-lines 2)
                 (map #(str/split % #" "))
                 (map (fn [[dir amt]]
                        [(keyword dir) (Integer/parseInt amt)]))))

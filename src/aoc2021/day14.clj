@@ -1,5 +1,5 @@
 (ns aoc2021.day14
-  (:require [aoc2021.core :refer [day]]
+  (:require [aoc2021.core :refer [day-lines]]
             [clojure.string :as str]))
 
 (defn parse-input [data]
@@ -34,11 +34,11 @@
 
 
 (def part1
-  (time (->> (parse-input (day 14))
+  (time (->> (parse-input (day-lines 14))
              (iterate-rules 10)
              calc-difference)))           ; => 3.169542 msecs
 
 (def part2
-  (time (->> (parse-input (day 14))
+  (time (->> (parse-input (day-lines 14))
              (iterate-rules 40)
              calc-difference)))           ; => 7.592375 msecs

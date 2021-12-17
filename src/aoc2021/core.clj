@@ -9,4 +9,7 @@
       (->> (format "day%d.txt" n)
            io/resource
            slurp
-           str/split-lines))))
+           str/trim))))
+
+(defn day-lines [^Integer n]
+  (str/split-lines (day n)))

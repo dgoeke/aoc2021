@@ -60,7 +60,7 @@
         (let [[subpacket rem] (parse-packet rem)]
           (recur rem (conj subpackets subpacket) (inc i)))))))
 
-(def input (map {\0 0 \1 1} (-> (day 16) first (BigInteger. 16) (.toString 2))))
+(def input (map {\0 0 \1 1} (-> (day 16) (BigInteger. 16) (.toString 2))))
 
 (def part2 (eval (first (parse-packet input))))   ; => 13476220616073
 (def part1 (reduce + @versions))                  ; => 940

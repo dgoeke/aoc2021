@@ -2,7 +2,7 @@
   (:require [aoc2021.core :refer [day]]))
 
 (def input
-  (->> (day 17) first (re-seq #"(-?\d+)") (map first) (map read-string)
+  (->> (day 17) (re-seq #"(-?\d+)") (map first) (map read-string)
        (zipmap [:xmin :xmax :ymin :ymax])))
 
 (defn triangular-number [n] (-> n (* (inc n)) (/ 2)))
